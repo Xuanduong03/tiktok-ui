@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 import Search from "../../../Components/Search";
+import routesConfig from "../../../Components/config/routes";
+import { Link } from "react-router-dom";
 import {
   faEarthAsia,
   faCircleQuestion,
@@ -34,6 +36,66 @@ const MENU_ITEM = [
     children: {
       title: "Language",
       data: [
+        {
+          type: "language",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi",
+          title: "Tiếng việt",
+        },
+        {
+          type: "language",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi",
+          title: "Tiếng việt",
+        },
+        {
+          type: "language",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi",
+          title: "Tiếng việt",
+        },
+        {
+          type: "language",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi",
+          title: "Tiếng việt",
+        },
+        {
+          type: "language",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi",
+          title: "Tiếng việt",
+        },
+        {
+          type: "language",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi",
+          title: "Tiếng việt",
+        },
         {
           type: "language",
           code: "en",
@@ -93,7 +155,9 @@ const Header = () => {
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <img src={images.logo.default} />
+        <Link to={routesConfig.home}>
+          <img src={images.logo.default} />
+        </Link>
         <Search />
         <div className={cx("actions")}>
           {currentUser ? (

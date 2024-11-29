@@ -30,32 +30,34 @@ function Menu({ children, items = [], onChange }) {
     });
   };
   return (
-    <TippyHeadless
-      interactive
-      delay={[0, 700]}
-      placement="bottom-end"
-      offset={[12, 8]}
-      onHide={() => {
-        setHistory((pre) => pre.slice(0, 1));
-      }}
-      render={(attrs) => (
-        <div className={cx("menu-list")} tabIndex="-1" {...attrs}>
-          <PropWrapper className={cx("menu-popper")}>
-            {history.length > 1 && (
-              <Header
-                title="Language"
-                onBack={() => {
-                  setHistory((pre) => pre.slice(0, pre.length - 1));
-                }}
-              />
-            )}
-            {renderItems()}
-          </PropWrapper>
-        </div>
-      )}
-    >
-      {children}
-    </TippyHeadless>
+    <div>
+      <TippyHeadless
+        interactive
+        delay={[0, 700]}
+        placement="bottom-end"
+        offset={[12, 8]}
+        onHide={() => {
+          setHistory((pre) => pre.slice(0, 1));
+        }}
+        render={(attrs) => (
+          <div className={cx("menu-list")} tabIndex="-1" {...attrs}>
+            <PropWrapper className={cx("menu-popper")}>
+              {history.length > 1 && (
+                <Header
+                  title="Language"
+                  onBack={() => {
+                    setHistory((pre) => pre.slice(0, pre.length - 1));
+                  }}
+                />
+              )}
+              <div className={cx("menu-scroll")}>{renderItems()}</div>
+            </PropWrapper>
+          </div>
+        )}
+      >
+        {children}
+      </TippyHeadless>
+    </div>
   );
 }
 
