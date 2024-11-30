@@ -1,5 +1,6 @@
 import styles from "./AccountItem.module.scss";
 import classNames from "classnames/bind";
+import Proptypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -22,5 +23,7 @@ function AccountItem({ data }) {
     </Link>
   );
 }
-
+AccountItem.propTypes = {
+  data: Proptypes.object,
+};
 export default AccountItem;

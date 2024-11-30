@@ -44,7 +44,7 @@ function Menu({ children, items = [], onChange }) {
             <PropWrapper className={cx("menu-popper")}>
               {history.length > 1 && (
                 <Header
-                  title="Language"
+                  title={current.title}
                   onBack={() => {
                     setHistory((pre) => pre.slice(0, pre.length - 1));
                   }}
